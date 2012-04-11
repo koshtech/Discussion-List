@@ -1,0 +1,26 @@
+<h1>Discussion List</h1>
+
+Search a topic:
+<%= form_tag :controller => 'topics', :action => 'search' do %>
+	<%= text_field_tag 'query', nil, :class => 'button-search' %>
+	<%= submit_tag "Go!", :disable_with => '...', :class => 'search' %>
+<% end %> 
+<br />
+
+<%= link_to 'New Topic', new_topic_path %>
+<br />
+<br />
+<hr />
+
+<% for t in @topics do %>
+  <h3><%= link_to t.title, t %></h3>
+  <p>( <%= t.comments.length %> comments )</p>
+  <hr />
+<% end %>
+<%= will_paginate @topics %>
+<br />
+
+<br />
+<% if current_user %>
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<% end %>
