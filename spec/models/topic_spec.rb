@@ -17,4 +17,6 @@ describe Topic do
   	@topic2.should_not be_valid 
   end
 
+  
+
 end

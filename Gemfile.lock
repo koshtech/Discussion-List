@@ -144,6 +144,7 @@ DEPENDENCIES
   mysql2
   rails (= 3.2.3)
   rspec
+  rspec-mocks
   rspec-rails
   sass-rails (~> 3.2.3)
   therubyracer
