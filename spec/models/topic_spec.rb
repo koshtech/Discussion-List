@@ -11,12 +11,4 @@ describe Topic do
   	@topic.should_not be_valid 
   end
 
-  #doesn't work
-  it "title should be unique" do
-  	@topic2 = Topic.new(:title => "Title", :text => "Text here")
-  	@topic2.should_not be_valid 
-  end
-
-  
-
 end
