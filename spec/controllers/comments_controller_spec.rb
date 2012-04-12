@@ -4,10 +4,9 @@ describe CommentsController do
 
   before(:each) do
     @topic = mock("topic")
-    @topic.stub!(:new_rocord?).and_return(false)
-
+    @topic.stub!(:new_record?).and_return(false)
     @comment = mock("comment")
-    @commnet.stub!(:new_rocord?).and_return(false)
+    @commnet.stub!(:new_record?).and_return(false)
   end
 
   it "should save comment" do

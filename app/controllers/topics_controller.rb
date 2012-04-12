@@ -36,9 +36,10 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(params[:topic])
-    @topic.year = created_at.year
-    @topic.month = created_at.month
-    @topic.day = created_at.day
+    time = Time.now
+    @topic.year = time.year
+    @topic.month = time.month
+    @topic.day = time.day
     if @topic.save
       flash[:notice] = 'Topic was successfully created.'
       respond_with @topic
